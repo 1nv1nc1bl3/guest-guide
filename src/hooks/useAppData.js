@@ -12,7 +12,7 @@ export function useAppData() {
                 const data = await getAppData();
                 setAppData(data);
             } catch (err) {
-                console.log('Error fetching data:', err);
+                console.log('Error fetching Hotel data:', err);
                 setError(true);
             } finally {
                 setIsLoading(false);

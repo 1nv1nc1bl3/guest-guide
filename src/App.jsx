@@ -1,7 +1,5 @@
 import { Outlet } from 'react-router-dom';
 import { useAppDataContext } from './context/AppDataContext';
-import './App.css';
-import Home from './pages/Home';
 
 export default function App() {
     // read from Context
