@@ -8,7 +8,7 @@ export default function SectionCard({ section }) {
     } else if (section.section_type === 'place_type') {
         path = `/places/${section.section_place_type}`;
     }
-    console.log(path);
+    // console.log(path);
     return (
         <Link to={path}>
             <div className='bg-white rounded-xl shadow p-4 text-center'>

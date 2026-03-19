@@ -21,9 +21,5 @@ export function useAppData() {
         loadData();
     }, []);
 
-    // useEffect(() => {
-    //     console.log(appData);
-    // }, [appData]);
-
     return { appData, isLoading, error };
 }

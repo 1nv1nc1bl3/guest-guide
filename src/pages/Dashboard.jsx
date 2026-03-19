@@ -4,7 +4,7 @@ import SectionCard from '../components/sections/SectionCard';
 export default function Dashboard() {
     const { appData, isLoading, error } = useAppDataContext();
     const sections = appData?.navigation || [];
-    console.log(sections);
+    // console.log(sections);
 
     if (isLoading)
         return <p className='text-center text-slate-500'>Loading...</p>;
@@ -14,7 +14,7 @@ export default function Dashboard() {
     }
 
     return (
-        <div className='grid grid-cols-2 gap-4'>
+        <div className='grid grid-cols-3 gap-4'>
             {sections.map((section) => (
                 <SectionCard
                     key={`${section.section_type}-${section.section_title}`}
