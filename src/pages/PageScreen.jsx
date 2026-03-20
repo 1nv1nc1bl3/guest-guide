@@ -28,8 +28,8 @@ export default function PageScreen() {
                     `${LINK_BASE}/wp/v2/pages?slug=${slug}`,
                 );
                 const data = await res.json();
-                // console.log('data:', data);
-                // console.log('slug:', slug);
+                console.log('data:', data);
+                console.log('slug:', slug);
                 if (data.length > 0) {
                     setPage(data[0]);
                 }

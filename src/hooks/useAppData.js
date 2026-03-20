@@ -11,6 +11,7 @@ export function useAppData() {
             try {
                 const data = await getAppData();
                 setAppData(data);
+                // console.log(data);
             } catch (err) {
                 console.log('Error fetching Hotel data:', err);
                 setError(true);
