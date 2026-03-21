@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import WifiPage from './WifiPage';
 import RulesPage from './RulesPage';
 
 const LINK_BASE = 'http://guestguide-cms.local/wp-json';
 
 export default function PageScreen() {
+    const navigate = useNavigate();
+
     const [page, setPage] = useState(null);
 
     const layout = page?.acf?.page_layout;
@@ -28,8 +30,8 @@ export default function PageScreen() {
                     `${LINK_BASE}/wp/v2/pages?slug=${slug}`,
                 );
                 const data = await res.json();
-                console.log('data:', data);
-                console.log('slug:', slug);
+                // console.log('data:', data);
+                // console.log('slug:', slug);
                 if (data.length > 0) {
                     setPage(data[0]);
                 }
@@ -46,6 +48,7 @@ export default function PageScreen() {
 
     return (
         <div>
+            <button onClick={() => navigate('/')}>go home</button>
             <h1>{page?.title?.rendered}</h1>
             {Component && <Component data={dataMap[layout]} />}
         </div>

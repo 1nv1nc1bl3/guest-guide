@@ -10,6 +10,7 @@ export function usePlaces(id) {
     useEffect(() => {
         const fetchPlace = async () => {
             try {
+                // http://guestguide-cms.local/wp-json/wp/v2/places?place_type=3
                 const res = await fetch(
                     `${LINK_BASE}/wp/v2/places/?place_type=${id}`,
                 );

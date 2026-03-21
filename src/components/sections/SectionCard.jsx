@@ -11,8 +11,11 @@ export default function SectionCard({ section }) {
     // console.log(path);
     return (
         <Link to={path}>
-            <div className='bg-white rounded-xl shadow p-4 text-center'>
-                {section.section_title}
+            <div className='flex flex-col gap-2 justify-center items-center text-center'>
+                <div className='dash-icon flex flex-col justify-center items-center bg-white rounded-xl shadow p-4 w-[64px] h-[64px]'>
+                    😋
+                </div>
+                <div className='dash-title'>{section.section_title}</div>
             </div>
         </Link>
     );
