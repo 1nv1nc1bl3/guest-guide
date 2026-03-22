@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { usePlaces } from '../hooks/usePlaces';
-import PlaceCard from '../components/sections/PlaceCard';
+import PlaceCard from '../components/places/PlaceCard';
 
 export default function Section() {
     const { id } = useParams();

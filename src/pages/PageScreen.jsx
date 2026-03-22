@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import WifiPage from './WifiPage';
-import RulesPage from './RulesPage';
+import WifiPage from './layouts/WifiPage';
+import RulesPage from './layouts/RulesPage';
 
 const LINK_BASE = 'http://guestguide-cms.local/wp-json';
 
