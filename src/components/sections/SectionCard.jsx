@@ -13,7 +13,7 @@ export default function SectionCard({ section }) {
         <Link to={path}>
             <div className='flex flex-col gap-2 justify-center items-center text-center'>
                 <div className='dash-icon flex flex-col justify-center items-center bg-white rounded-xl shadow p-4 w-[64px] h-[64px]'>
-                    😋
+                    {section.section_page.section_icon}
                 </div>
                 <div className='dash-title'>{section.section_title}</div>
             </div>

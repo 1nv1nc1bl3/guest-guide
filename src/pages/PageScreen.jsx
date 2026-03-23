@@ -1,13 +1,11 @@
 import { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import WifiPage from './layouts/WifiPage';
 import RulesPage from './layouts/RulesPage';
 
 const LINK_BASE = 'http://guestguide-cms.local/wp-json';
 
 export default function PageScreen() {
-    const navigate = useNavigate();
-
     const [page, setPage] = useState(null);
 
     const layout = page?.acf?.page_layout;
@@ -48,7 +46,6 @@ export default function PageScreen() {
 
     return (
         <div>
-            <button onClick={() => navigate('/')}>go home</button>
             <h1>{page?.title?.rendered}</h1>
             {Component && <Component data={dataMap[layout]} />}
         </div>
