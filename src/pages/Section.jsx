@@ -13,7 +13,7 @@ export default function Section() {
     const placeTitle = getPlaceTypeName(placeTypes, id);
 
     if (loading)
-        return <p className='text-center text-slate-500'>Loading...</p>;
+        return <p className='text-center text-slate-500'>Loading Section...</p>;
 
     if (error) {
         return <p className='text-center text-red-500'>Something went wrong</p>;
