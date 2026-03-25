@@ -9,7 +9,11 @@ export default function NavItem({ section, setIsOpen }) {
         path = `/places/${section.section_place_type}`;
     }
     return (
-        <Link to={path} onClick={() => setIsOpen(false)} className='text-xl'>
+        <Link
+            to={path}
+            onClick={() => setIsOpen(false)}
+            className='text-xl text-[--color-texts]'
+        >
             <div className='dash-title'>{section.section_title}</div>
         </Link>
     );

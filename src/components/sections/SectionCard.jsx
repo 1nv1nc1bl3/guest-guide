@@ -16,10 +16,12 @@ export default function SectionCard({ section }) {
     return (
         <Link to={path} className='flex flex-col items-center w-auto'>
             <div className='flex flex-col gap-2 justify-center items-center text-center'>
-                <div className='dash-icon flex flex-col justify-center items-center bg-white rounded-xl shadow p-4 w-[64px] h-[64px]'>
+                <div className='dash-icon flex flex-col justify-center items-center bg-[--color-additional] rounded-xl shadow p-4 w-[64px] h-[64px]'>
                     <img src={icon} alt={section.section_title} />
                 </div>
-                <div className='dash-title'>{section.section_title}</div>
+                <div className='dash-title text-[--color-headings]'>
+                    {section.section_title}
+                </div>
             </div>
         </Link>
     );

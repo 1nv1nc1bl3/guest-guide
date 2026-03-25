@@ -1,10 +1,9 @@
 function MenuIcon() {
     return (
         <>
-            <span className='menu-button-icon'>
+            <span className='menu-button-icon fill-[--color-headings]'>
                 <svg
                     className='w-10 h-10'
-                    fill='#000000'
                     width='129px'
                     height='129px'
                     viewBox='0 0 64.00 64.00'
@@ -24,7 +23,7 @@ function MenuIcon() {
                     </g>
                 </svg>
             </span>
-            <span className='menu-button-text font-semibold text-lg uppercase'>
+            <span className='menu-button-text font-semibold text-lg uppercase text-[--color-headings]'>
                 menu
             </span>
         </>

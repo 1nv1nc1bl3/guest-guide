@@ -18,7 +18,7 @@ export default function Header() {
 
     return (
         <>
-            <header className='flex justify-between items-center'>
+            <header className='flex justify-between items-center p-2'>
                 <div className='back-button'>
                     {!isHome ? (
                         <button
@@ -40,8 +40,10 @@ export default function Header() {
                     </button>
                 </div>
             </header>
+
+            {/* Menu Popup */}
             {isOpen && (
-                <div className='popup-overlay fixed top-0 left-0 w-[100%] h-[100%] bg-gray-800 z-50 flex flex-col justify-start items-center'>
+                <div className='popup-overlay fixed top-0 left-0 w-[100%] h-[100%] bg-gradient-to-b from-[--color-primary] to-[--color-secondary] z-50 flex flex-col justify-start items-center'>
                     <div className='popup-menu text-white flex flex-col gap-4 text-center justify-center h-[100%]'>
                         {navigation.map((section) => (
                             <NavItem
