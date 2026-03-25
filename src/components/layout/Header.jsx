@@ -10,6 +10,7 @@ export default function Header() {
     const [isOpen, setIsOpen] = useState(false);
 
     const location = useLocation();
+    // console.log(location);
     const navigate = useNavigate();
     const isHome = location.pathname === '/';
 
@@ -18,7 +19,7 @@ export default function Header() {
 
     return (
         <>
-            <header className='flex justify-between items-center p-2'>
+            <header className='flex justify-between items-center p-4'>
                 <div className='back-button'>
                     {!isHome ? (
                         <button
@@ -32,12 +33,16 @@ export default function Header() {
                     )}
                 </div>
                 <div className='menu-button'>
-                    <button
-                        className='flex flex-row-reverse items-center gap-2'
-                        onClick={() => setIsOpen(true)}
-                    >
-                        <MenuIcon />
-                    </button>
+                    {!isHome ? (
+                        <button
+                            className='flex flex-row-reverse items-center gap-2'
+                            onClick={() => setIsOpen(true)}
+                        >
+                            <MenuIcon />
+                        </button>
+                    ) : (
+                        ''
+                    )}
                 </div>
             </header>
 

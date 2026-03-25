@@ -4,7 +4,7 @@ import Header from './Header';
 
 export default function Layout() {
     return (
-        <section className='full-app-page px-6 py-6 bg-[--color-secondary]'>
+        <section className='full-app-page'>
             <div className='app-container mx-auto h-dvh min-w-full bg-gradient-to-b from-[--color-primary] to-[--color-secondary]'>
                 <Header />
                 <main className='flex justify-center px-6 py-10 font-montserrat'>

@@ -23,7 +23,7 @@ export default function Section() {
 
     return (
         <div className='flex flex-col items-center gap-10 w-full'>
-            <h1 className='text-2xl uppercase text-[--color-headings]'>
+            <h1 className='text-3xl uppercase text-[--color-headings]'>
                 {placeTitle}
             </h1>
             {places.map((place) => (
