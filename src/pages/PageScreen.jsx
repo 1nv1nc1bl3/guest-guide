@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import Loader from '../components/ui/Loader';
 import WifiPage from './layouts/WifiPage';
 import RulesPage from './layouts/RulesPage';
-import Loader from '../components/ui/Loader';
+import CheckinPage from './layouts/CheckinPage';
+import EmergencyPage from './layouts/EmergencyPage';
 
 const LINK_BASE = 'http://guestguide-cms.local/wp-json';
 
@@ -13,11 +15,15 @@ export default function PageScreen() {
     const layouts = {
         wifi: WifiPage,
         rules: RulesPage,
+        checkin: CheckinPage,
+        emergency: EmergencyPage,
     };
     const Component = layouts[layout];
     const dataMap = {
         wifi: page?.acf?.wifi_fields,
         rules: page?.acf?.rules_fields,
+        checkin: page?.acf?.checkinout_fields,
+        emergency: page?.acf?.emergency_fields,
     };
     // console.log(layout);
     const { slug } = useParams();
@@ -47,10 +53,10 @@ export default function PageScreen() {
 
     return (
         <div className='flex flex-col items-center gap-10 w-full'>
-            <h1 className='text-3xl uppercase text-[--color-headings]'>
-                {page?.title?.rendered}
+            <h1 className='page-title text-3xl uppercase text-[--color-headings]'>
+                {layout !== 'emergency' ? page?.title?.rendered : ''}
             </h1>
-            {Component && <Component data={dataMap[layout]} />}
+            {Component && <Component page={page} data={dataMap[layout]} />}
         </div>
     );
 }

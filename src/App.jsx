@@ -23,6 +23,10 @@ export default function App() {
             appData?.settings?.global_add_color,
         );
         styleSetProperty.setProperty(
+            '--color-dark-bg',
+            appData?.settings?.global_dark_bg_color,
+        );
+        styleSetProperty.setProperty(
             '--color-headings',
             appData?.settings?.global_head_color,
         );

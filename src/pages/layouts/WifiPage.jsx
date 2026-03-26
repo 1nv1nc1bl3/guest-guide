@@ -11,12 +11,12 @@ export default function WifiPage({ data }) {
                 alt={'123'}
             />
             <div className={`${blockStyle}`}>
-                <p className='text-3xl'>{data.wifi_name}</p>
-                <h2 className='uppercase text-xl'>Wifi Name</h2>
+                <p className='text-4xl font-semibold'>{data.wifi_name}</p>
+                <h2 className='uppercase text-2xl font-light'>Wifi Name</h2>
             </div>
             <div className={`${blockStyle}`}>
-                <p className='text-3xl'>{data.wifi_password}</p>
-                <h2 className='uppercase text-xl'>Password</h2>
+                <p className='text-4xl font-semibold'>{data.wifi_password}</p>
+                <h2 className='uppercase text-2xl font-light'>Password</h2>
             </div>
         </div>
     );

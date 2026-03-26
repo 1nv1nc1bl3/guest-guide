@@ -5,6 +5,8 @@ export default {
         extend: {
             fontFamily: {
                 montserrat: ['Montserrat', 'sans-serif'],
+                hubballi: ['Hubballi', 'sans-serif'],
+                inter: ['Inter', 'sans-serif'],
             },
         },
     },

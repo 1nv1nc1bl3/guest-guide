@@ -26,7 +26,7 @@ export default function PlaceCard({ place, type }) {
 
     return (
         <div
-            className={`place-card ${type === '3' ? 'p-2 bg-slate-200' : 'p-0 bg-gray-200'} bg-cover bg-center bg-no-repeat border rounded-lg relative overflow-hidden w-full mx-auto max-w-xl h-[220px]`}
+            className={`place-card ${type === '3' ? 'p-2 bg-[--color-additional]' : 'p-0 bg-gray-200'} bg-cover bg-center bg-no-repeat border border-[--color-primary] rounded-lg relative overflow-hidden w-full mx-auto max-w-xl h-[220px]`}
             style={{ backgroundImage: cardImage }}
         >
             <div
@@ -42,7 +42,7 @@ export default function PlaceCard({ place, type }) {
                 )}
                 {place?.acf?.place_description && (
                     <p
-                        className={`card-description max-w-[75%] ${type === '3' && 'mt-4'}`}
+                        className={`card-description max-w-[90%] ${type === '3' && 'mt-4'}`}
                     >
                         {place?.acf?.place_description}
                     </p>
