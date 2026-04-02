@@ -6,7 +6,7 @@ import RulesPage from './layouts/RulesPage';
 import CheckinPage from './layouts/CheckinPage';
 import EmergencyPage from './layouts/EmergencyPage';
 
-const LINK_BASE = 'http://guestguide-cms.local/wp-json';
+const LINK_BASE = 'https://api.mystayguide.app/wp-json';
 
 export default function PageScreen() {
     const [page, setPage] = useState(null);

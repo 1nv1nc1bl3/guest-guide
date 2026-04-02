@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const LINK_BASE = 'http://guestguide-cms.local/wp-json';
+const LINK_BASE = 'https://api.mystayguide.app/wp-json';
 
 export function usePlaces(id) {
     const [places, setPlaces] = useState([]);
@@ -10,7 +10,7 @@ export function usePlaces(id) {
     useEffect(() => {
         const fetchPlace = async () => {
             try {
-                // http://guestguide-cms.local/wp-json/wp/v2/places?place_type=3
+                // https://api.mystayguide.app/wp-json/wp/v2/places?place_type=3
                 const res = await fetch(
                     `${LINK_BASE}/wp/v2/places/?place_type=${id}`,
                 );
