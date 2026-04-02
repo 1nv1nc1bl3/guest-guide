@@ -1,4 +1,4 @@
-const API_BASE = 'http://guestguide-cms.local/wp-json';
+const API = 'https://api.mystayguide.app/wp-json/guestguide/v1/app';
 
 export async function getAppData() {
     try {
