@@ -5,6 +5,7 @@ import WifiPage from './layouts/WifiPage';
 import RulesPage from './layouts/RulesPage';
 import CheckinPage from './layouts/CheckinPage';
 import EmergencyPage from './layouts/EmergencyPage';
+import ArticlePage from './layouts/ArticlePage';
 
 const LINK_BASE = 'https://api.mystayguide.app/wp-json';
 
@@ -17,6 +18,7 @@ export default function PageScreen() {
         rules: RulesPage,
         checkin: CheckinPage,
         emergency: EmergencyPage,
+        article: ArticlePage,
     };
     const Component = layouts[layout];
     const dataMap = {
@@ -24,6 +26,7 @@ export default function PageScreen() {
         rules: page?.acf?.rules_fields,
         checkin: page?.acf?.checkinout_fields,
         emergency: page?.acf?.emergency_fields,
+        article: page?.acf?.article_fields,
     };
     // console.log(layout);
     const { slug } = useParams();
@@ -52,8 +55,10 @@ export default function PageScreen() {
     if (!Component) return <p>Unknown layout</p>;
 
     return (
-        <div className='flex flex-col items-center gap-10 w-full'>
-            <h1 className='page-title text-3xl uppercase text-[--color-headings]'>
+        <div
+            className={`flex flex-col items-center ${layout !== 'emergency' && 'gap-10'} w-full`}
+        >
+            <h1 className='page-title text-2xl text-center uppercase text-[--color-headings]'>
                 {layout !== 'emergency' ? page?.title?.rendered : ''}
             </h1>
             {Component && <Component page={page} data={dataMap[layout]} />}

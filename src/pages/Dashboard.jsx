@@ -17,7 +17,12 @@ export default function Dashboard() {
     }
 
     return (
-        <div className='dashboard flex flex-col justify-center items-center gap-10 md:gap-10 lg:gap-12'>
+        <div className='dashboard flex flex-col justify-center items-center gap-2 md:gap-10 lg:gap-12'>
+            <img
+                className='w-20 h-20'
+                src={appData?.settings?.global_hotel_logo}
+                alt={appData?.settings?.global_hotel_name}
+            />
             <h1 className='dash-head uppercase text-[--color-headings] text-lg text-center'>
                 tap the buttons to explore
             </h1>
@@ -26,7 +31,7 @@ export default function Dashboard() {
                     <ClipLoader className='w-full' size={150} />
                 </div>
             )}
-            <div className='icons-grid grid grid-cols-3 gap-3 md:gap-4 lg:gap-8 justify-items-center'>
+            <div className='icons-grid grid grid-cols-3 gap-4 md:gap-4 lg:gap-8 justify-items-center mt-4'>
                 {sections.map((section) => (
                     <SectionCard
                         key={`${section.section_type}-${section.section_title}`}

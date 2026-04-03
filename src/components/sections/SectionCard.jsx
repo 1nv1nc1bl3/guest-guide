@@ -15,11 +15,11 @@ export default function SectionCard({ section }) {
 
     return (
         <Link to={path} className='flex flex-col items-center w-auto'>
-            <div className='flex flex-col gap-1 md:gap-2 lg:gap-4 justify-center items-center text-center'>
+            <div className='flex flex-col gap-3 md:gap-2 lg:gap-4 justify-center items-center text-center'>
                 <div className='dash-icon flex flex-col justify-center items-center bg-[--color-additional] hover:bg-[--color-primary] transition duration-300 ease-in-out rounded-xl shadow p-4 w-[64px] h-[64px]'>
                     <img src={icon} alt={section.section_title} />
                 </div>
-                <div className='dash-title text-[--color-headings]'>
+                <div className='dash-title text-[--color-headings] text-[16px]/[20px]'>
                     {section.section_title}
                 </div>
             </div>

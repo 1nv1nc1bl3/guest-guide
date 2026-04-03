@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useAppDataContext } from '../../context/AppDataContext';
 import NavItem from './NavItem';
 import BackIcon from '../ui/BackIcon';
@@ -9,10 +9,7 @@ import CloseIcon from '../ui/CloseIcon';
 export default function Header() {
     const [isOpen, setIsOpen] = useState(false);
 
-    const location = useLocation();
-    // console.log(location);
     const navigate = useNavigate();
-    const isHome = location.pathname === '/';
 
     const { appData } = useAppDataContext();
     const navigation = appData?.navigation || [];
@@ -21,28 +18,20 @@ export default function Header() {
         <>
             <header className='flex justify-between items-center p-4'>
                 <div className='back-button'>
-                    {!isHome ? (
-                        <button
-                            className='flex items-center gap-2'
-                            onClick={() => navigate('/')}
-                        >
-                            <BackIcon />
-                        </button>
-                    ) : (
-                        ''
-                    )}
+                    <button
+                        className='flex items-center gap-2'
+                        onClick={() => navigate('/')}
+                    >
+                        <BackIcon />
+                    </button>
                 </div>
                 <div className='menu-button'>
-                    {!isHome ? (
-                        <button
-                            className='flex flex-row-reverse items-center gap-2'
-                            onClick={() => setIsOpen(true)}
-                        >
-                            <MenuIcon />
-                        </button>
-                    ) : (
-                        ''
-                    )}
+                    <button
+                        className='flex flex-row-reverse items-center gap-2'
+                        onClick={() => setIsOpen(true)}
+                    >
+                        <MenuIcon />
+                    </button>
                 </div>
             </header>
 

@@ -3,7 +3,7 @@ function BackIcon() {
         <>
             <span className='back-button-icon'>
                 <svg
-                    className='w-10 h-10 fill-[--color-headings] stroke-[--color-headings]'
+                    className='w-8 h-8 fill-[--color-headings] stroke-[--color-headings]'
                     width='129px'
                     height='129px'
                     viewBox='0 0 20.00 20.00'
@@ -25,7 +25,7 @@ function BackIcon() {
                     </g>
                 </svg>
             </span>
-            <span className='back-button-text font-semibold text-lg uppercase text-[--color-headings]'>
+            <span className='back-button-text font-semibold text-md uppercase text-[--color-headings]'>
                 back
             </span>
         </>

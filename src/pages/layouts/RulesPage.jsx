@@ -1,7 +1,7 @@
 export default function RulesPage({ data }) {
     const rules = data?.rules;
     return (
-        <div className='flex flex-col gap-4 md:gap-6 lg:gap-8 w-[50%] text-[--color-texts] bg-[--color-secondary] px-14 py-12'>
+        <div className='flex flex-col gap-4 md:gap-6 lg:gap-8 w-[90%] text-[--color-texts] bg-[--color-secondary] px-14 py-12'>
             {rules.map((rule, index) => (
                 <div key={index} className='flex flex-col gap-1 pl-6'>
                     <p className='font-semibold relative'>

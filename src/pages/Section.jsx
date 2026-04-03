@@ -4,13 +4,18 @@ import PlaceCard from '../components/places/PlaceCard';
 import { getPlaceTypeName } from '../utils/getPlaceTypeName';
 import { useAppDataContext } from '../context/AppDataContext';
 import Loader from '../components/ui/Loader';
+
 export default function Section() {
     const { id } = useParams();
     const { places, loading, error } = usePlaces(id);
-    // console.log(id);
 
     const { appData } = useAppDataContext();
     const placeTypes = appData?.place_types || [];
+
+    const placeType = placeTypes.find(
+        (type) => String(type.term_id) === String(id),
+    );
+
     const placeTitle = getPlaceTypeName(placeTypes, id);
 
     if (loading) return <Loader />;
@@ -26,8 +31,13 @@ export default function Section() {
             <h1 className='text-3xl uppercase text-[--color-headings]'>
                 {placeTitle}
             </h1>
+
             {places.map((place) => (
-                <PlaceCard key={place?.id} place={place} type={id} />
+                <PlaceCard
+                    key={place?.id}
+                    place={place}
+                    placeType={placeType}
+                />
             ))}
         </div>
     );
