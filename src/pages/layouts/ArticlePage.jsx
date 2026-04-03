@@ -1,3 +1,7 @@
+import ArticleDirectory from './ArticleDirectory';
+import ArticleContent from './ArticleContent';
+import ArticleText from './ArticleText';
+
 export default function ArticlePage({ data }) {
     const sections = data?.article_sections || [];
     const hasHero = data?.hero_image;
