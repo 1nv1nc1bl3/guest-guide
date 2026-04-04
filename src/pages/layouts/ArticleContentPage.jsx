@@ -1,3 +1,5 @@
+import { appIcons } from '../../components/icons/sectionIcons';
+
 export default function ArticleContentPage({ data }) {
     const subjects = data?.article_sections || [];
 
@@ -18,17 +20,30 @@ export default function ArticleContentPage({ data }) {
                         {sub?.title && (
                             <h3 className='font-semibold'>{sub?.title}</h3>
                         )}
-                        {sub?.content && <p className=''>{sub?.content}</p>}
+                        {sub?.content && (
+                            <p
+                                className='article-content'
+                                dangerouslySetInnerHTML={{
+                                    __html: sub?.content,
+                                }}
+                            ></p>
+                        )}
 
                         {sub?.link_label && sub?.link_url && (
-                            <div className='flex items-center gap-3 mt-1'>
-                                <span>{sub?.link_label}</span>
+                            <div className='flex items-end justify-start gap-3 text-stone-500'>
+                                <span className='mb-[-5px]'>
+                                    {sub?.link_label}
+                                </span>
                                 <a
                                     href={sub?.link_url}
                                     target='_blank'
                                     rel='noopener noreferrer'
                                 >
-                                    📌
+                                    <img
+                                        className='w-8'
+                                        src={appIcons?.directions}
+                                        alt={sub?.title}
+                                    />
                                 </a>
                             </div>
                         )}

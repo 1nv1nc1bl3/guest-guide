@@ -59,7 +59,13 @@ export default function PageScreen() {
             className={`flex flex-col items-center ${layout !== 'emergency' && 'gap-10'} w-full`}
         >
             <h1 className='page-title text-2xl text-center uppercase text-[--color-headings]'>
-                {layout !== 'emergency' ? page?.title?.rendered : ''}
+                {layout !== 'emergency' && (
+                    <span
+                        dangerouslySetInnerHTML={{
+                            __html: page?.title?.rendered,
+                        }}
+                    />
+                )}
             </h1>
             {Component && <Component page={page} data={dataMap[layout]} />}
         </div>
