@@ -12,6 +12,8 @@ import info from '../../assets/icons/info.svg';
 import phrases from '../../assets/icons/phrases.svg';
 import leave from '../../assets/icons/leave.svg';
 import contact from '../../assets/icons/contact.svg';
+import email from '../../assets/icons/email.svg';
+import website from '../../assets/icons/website.svg';
 
 export const sectionIcons = {
     'Check In/Out': checkin,
@@ -23,9 +25,28 @@ export const sectionIcons = {
     'Places to Drink': bar,
     'House Rules': rules,
     'Emergency': emergency,
-    'Local Directory': directory,
+    'Local Services': directory,
     'Things to Know': info,
     'Key Phrases & Words': phrases,
     'Before you Leave': leave,
     'Contact': contact,
+};
+
+export const appIcons = {
+    checkin,
+    amenities,
+    directions,
+    wifi,
+    beach,
+    restaurant,
+    bar,
+    rules,
+    emergency,
+    directory,
+    info,
+    phrases,
+    leave,
+    contact,
+    email,
+    website,
 };

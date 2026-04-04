@@ -8,9 +8,9 @@ export default function Layout() {
 
     return (
         <section className='full-app-page tracking-wide leading-relaxed'>
-            <div className='app-container mx-auto h-dvh min-w-full pt-[1dvh] md:pt-[3dvh] lg:pt-[5dvh] bg-gradient-to-b from-[--color-primary] to-[--color-secondary]'>
+            <div className='app-container mx-auto min-h-dvh min-w-full pt-[1dvh] md:pt-[3dvh] lg:pt-[5dvh] bg-gradient-to-b from-[--color-primary] to-[--color-secondary]'>
                 {!isHome && <Header />}
-                <main className='flex justify-center px-6 py-2'>
+                <main className='flex flex-col items-center min-h-dvh px-6 pt-2 pb-10'>
                     <div className='w-full max-w-6xl'>
                         <Outlet />
                     </div>

@@ -1,3 +1,5 @@
+import { appIcons } from '../../components/icons/sectionIcons';
+
 export default function PlaceCard({ place, placeType }) {
     const cardImage = `url('${place?.acf?.place_image}')`;
     const layout = placeType?.acf?.card_layout || 'business';
@@ -12,22 +14,22 @@ export default function PlaceCard({ place, placeType }) {
         {
             value: place?.acf?.place_phone,
             href: `tel:${place?.acf?.place_phone}`,
-            icon: '📞',
+            icon: `${appIcons?.contact}`,
         },
         {
             value: place?.acf?.place_email,
             href: `mailto:${place?.acf?.place_email}`,
-            icon: '📧',
+            icon: `${appIcons?.email}`,
         },
         {
             value: place?.acf?.place_map,
             href: place?.acf?.place_map,
-            icon: '📌',
+            icon: `${appIcons?.directions}`,
         },
         {
             value: place?.acf?.place_website,
             href: place?.acf?.place_website,
-            icon: '🌐',
+            icon: `${appIcons?.website}`,
         },
     ];
 
@@ -38,7 +40,7 @@ export default function PlaceCard({ place, placeType }) {
             bg-cover bg-center bg-no-repeat 
             border border-[--color-primary] 
             rounded-lg relative overflow-hidden 
-            w-full mx-auto max-w-xl h-[220px]`}
+            w-full mx-auto max-w-xl min-h-[250px]`}
             style={{ backgroundImage: cardImage }}
         >
             <div
@@ -49,7 +51,7 @@ export default function PlaceCard({ place, placeType }) {
                 } w-full p-2`}
             >
                 {place?.title?.rendered && (
-                    <h3 className='card-title text-xl font-bold'>
+                    <h3 className='card-title text-xl font-bold text-[--color-additional]'>
                         {place?.title?.rendered}
                     </h3>
                 )}
@@ -69,7 +71,9 @@ export default function PlaceCard({ place, placeType }) {
                 )}
 
                 {place?.acf?.place_address && (
-                    <p className='card-address'>{place?.acf?.place_address}</p>
+                    <p className='card-address text-sm'>
+                        {place?.acf?.place_address}
+                    </p>
                 )}
             </div>
 
@@ -86,7 +90,11 @@ export default function PlaceCard({ place, placeType }) {
                                 target='_blank'
                                 rel='noopener noreferrer'
                             >
-                                {action.icon}
+                                <img
+                                    className='w-6'
+                                    src={action.icon}
+                                    alt='place action'
+                                />
                             </a>
                         ),
                 )}

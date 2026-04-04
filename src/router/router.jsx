@@ -4,6 +4,7 @@ import Layout from '../components/layout/Layout';
 import Dashboard from '../pages/Dashboard';
 import PageScreen from '../pages/PageScreen';
 import Section from '../pages/Section';
+import Page404 from '../pages/Page404';
 
 export const router = createBrowserRouter(
     [
@@ -25,6 +26,10 @@ export const router = createBrowserRouter(
                         {
                             path: 'places/:id',
                             element: <Section />,
+                        },
+                        {
+                            path: '*',
+                            element: <Page404 />,
                         },
                     ],
                 },
