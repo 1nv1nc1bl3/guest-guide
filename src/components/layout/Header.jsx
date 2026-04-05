@@ -16,7 +16,7 @@ export default function Header() {
 
     return (
         <>
-            <header className='flex justify-between items-center p-4'>
+            <header className='flex justify-between items-center p-4 sticky top-2 bg-[--color-primary]'>
                 <div className='back-button'>
                     <button
                         className='flex items-center gap-2'

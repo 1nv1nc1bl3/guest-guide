@@ -6,6 +6,9 @@ import RulesPage from './layouts/RulesPage';
 import CheckinPage from './layouts/CheckinPage';
 import EmergencyPage from './layouts/EmergencyPage';
 import ArticlePage from './layouts/ArticlePage';
+import AmenitiesPage from './layouts/AmenitiesPage';
+import ContactPage from './layouts/ContactPage';
+import DirectionsPage from './layouts/DirectionsPage';
 
 const LINK_BASE = 'https://api.mystayguide.app/wp-json';
 
@@ -19,6 +22,9 @@ export default function PageScreen() {
         checkin: CheckinPage,
         emergency: EmergencyPage,
         article: ArticlePage,
+        media: AmenitiesPage,
+        contact: ContactPage,
+        directions: DirectionsPage,
     };
     const Component = layouts[layout];
     const dataMap = {
@@ -27,6 +33,9 @@ export default function PageScreen() {
         checkin: page?.acf?.checkinout_fields,
         emergency: page?.acf?.emergency_fields,
         article: page?.acf?.article_fields,
+        media: page?.acf?.media_fields,
+        contact: page?.acf?.contact_fields,
+        directions: page?.acf?.directions_fields,
     };
     // console.log(layout);
     const { slug } = useParams();

@@ -5,6 +5,7 @@ import Dashboard from '../pages/Dashboard';
 import PageScreen from '../pages/PageScreen';
 import Section from '../pages/Section';
 import Page404 from '../pages/Page404';
+import LoginPage from '../pages/LoginPage';
 
 export const router = createBrowserRouter(
     [
@@ -15,6 +16,10 @@ export const router = createBrowserRouter(
                 {
                     element: <Layout />,
                     children: [
+                        {
+                            path: '/login',
+                            element: <LoginPage />,
+                        },
                         {
                             index: true,
                             element: <Dashboard />,

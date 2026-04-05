@@ -4,7 +4,7 @@ export default function ArticleContentPage({ data }) {
     const subjects = data?.article_sections || [];
 
     return (
-        <div className='flex flex-col gap-8 w-[90%]'>
+        <div className='flex flex-col gap-8 w-full'>
             {data?.hero_image && (
                 <div className='hero-container w-full'>
                     <img
