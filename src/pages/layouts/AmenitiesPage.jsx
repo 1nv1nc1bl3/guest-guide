@@ -2,7 +2,7 @@ export default function AmenitiesPage({ data }) {
     const amenities = data?.group_repeater || [];
 
     return (
-        <div className='flex flex-col gap-8'>
+        <div className='flex flex-col gap-8 w-full'>
             {amenities.map((amenity, index) => (
                 <div key={index} className='flex flex-col gap-2'>
                     <h3 className='font-semibold text-xl'>

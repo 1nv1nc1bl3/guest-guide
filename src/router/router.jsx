@@ -33,6 +33,10 @@ export const router = createBrowserRouter(
                             element: <Section />,
                         },
                         {
+                            path: '/404',
+                            element: <Page404 />,
+                        },
+                        {
                             path: '*',
                             element: <Page404 />,
                         },

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Navigate, useParams } from 'react-router-dom';
 import Loader from '../components/ui/Loader';
 import WifiPage from './layouts/WifiPage';
 import RulesPage from './layouts/RulesPage';
@@ -51,6 +51,8 @@ export default function PageScreen() {
                 // console.log('slug:', slug);
                 if (data.length > 0) {
                     setPage(data[0]);
+                } else {
+                    setPage(false);
                 }
             } catch (error) {
                 console.log('Error:', error);
@@ -59,7 +61,9 @@ export default function PageScreen() {
         fetchPage();
     }, [slug]);
 
-    if (!page) return <Loader />;
+    if (page === null) return <Loader />;
+
+    if (page === false) return <Navigate to='/404' replace />;
 
     if (!Component) return <p>Unknown layout</p>;
 

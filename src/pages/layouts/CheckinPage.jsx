@@ -5,7 +5,7 @@ export default function CheckinPage({ data }) {
     const timeFieldStyle = `text-4xl font-semibold text-center`;
 
     return (
-        <div className='flex flex-col items-center w-full gap-2 md:gap-8 lg:gap-10 text-[--color-texts] max-w-[90%]'>
+        <div className='flex flex-col items-center w-full gap-2 md:gap-8 lg:gap-10 text-[--color-texts]'>
             <div className={checkFieldStyle}>
                 <div className={whiteBoxStyle}>
                     <p className={timeFieldStyle}>{data?.checkin_time}</p>

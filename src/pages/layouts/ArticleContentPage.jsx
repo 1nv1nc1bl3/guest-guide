@@ -1,6 +1,7 @@
 import { appIcons } from '../../components/icons/sectionIcons';
 
 export default function ArticleContentPage({ data }) {
+    //page => things to know
     const subjects = data?.article_sections || [];
 
     return (
