@@ -1,4 +1,5 @@
 import { appIcons } from '../../components/icons/sectionIcons';
+import PageHero from '../../components/ui/PageHero';
 import { useAppDataContext } from '../../context/AppDataContext';
 
 export default function ContactPage({ data }) {
@@ -7,15 +8,8 @@ export default function ContactPage({ data }) {
 
     return (
         <div className='contact-page-container w-full flex flex-col gap-8'>
-            {data?.contact_banner && (
-                <div className='hero-container'>
-                    <img
-                        src={data?.contact_banner}
-                        alt='Contact Page Banner'
-                        className='h-[150px] w-full object-cover'
-                    />
-                </div>
-            )}
+            <PageHero image={data?.contact_banner} alt='Contact Banner' />
+
             <div className='items-container flex flex-col gap-8'>
                 {contact?.global_hotel_address && (
                     <div className='flex flex-col justify-center items-center gap-4'>

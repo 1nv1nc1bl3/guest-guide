@@ -1,4 +1,5 @@
 import { appIcons } from '../../components/icons/sectionIcons';
+import PageHero from '../../components/ui/PageHero';
 
 export default function ArticleContentPage({ data }) {
     //page => things to know
@@ -6,15 +7,7 @@ export default function ArticleContentPage({ data }) {
 
     return (
         <div className='flex flex-col gap-8 w-full'>
-            {data?.hero_image && (
-                <div className='hero-container w-full'>
-                    <img
-                        className='hero-image h-[150px] w-full rounded-lg object-cover'
-                        src={data?.hero_image}
-                        alt='Things to Know Banner'
-                    />
-                </div>
-            )}
+            <PageHero image={data?.hero_image} alt='Things to Know' />
             <div className='to-know-subjects flex flex-col gap-8'>
                 {subjects.map((sub, index) => (
                     <div key={index} className='flex flex-col gap-1'>
