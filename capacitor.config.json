@@ -1,0 +1,9 @@
+{
+    "appId": "app.mystayguide.mobile",
+    "appName": "My Stay Guide",
+    "webDir": "dist",
+    "server": {
+        "url": "https://www.mystayguide.app/",
+        "cleartext": true
+    }
+}

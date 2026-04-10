@@ -7,12 +7,20 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# dependencies
 node_modules
+
+# build
 dist
 dist-ssr
+build
+
+# env
+.env
+.env.*
 *.local
 
-# Editor directories and files
+# editor
 .vscode/*
 !.vscode/extensions.json
 .idea
@@ -22,3 +30,26 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Capacitor
+.capacitor
+
+# Android
+android/.gradle
+android/local.properties
+android/captures
+android/.idea
+android/app/build
+android/build
+android/.cxx
+android/app/debug
+android/app/profile
+android/app/release
+
+# signing
+*.keystore
+*.jks
+*.pem
+
+# mac
+*.hprof
