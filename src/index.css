@@ -11,3 +11,16 @@
         @apply font-montserrat;
     }
 }
+
+html,
+body,
+#root {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+}
+
+body {
+    overflow: hidden;
+}

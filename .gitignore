@@ -10,10 +10,11 @@ lerna-debug.log*
 # dependencies
 node_modules
 
-# build
+# build output
 dist
 dist-ssr
 build
+coverage
 
 # env
 .env
@@ -34,22 +35,25 @@ build
 # Capacitor
 .capacitor
 
-# Android
+# Android (Capacitor)
 android/.gradle
+android/.idea
 android/local.properties
 android/captures
-android/.idea
-android/app/build
 android/build
+android/app/build
 android/.cxx
 android/app/debug
 android/app/profile
 android/app/release
 
-# signing
+# Android Studio
+*.iml
+
+# signing keys (IMPORTANT)
 *.keystore
 *.jks
 *.pem
 
-# mac
+# macOS
 *.hprof

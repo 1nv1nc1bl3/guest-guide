@@ -2,11 +2,19 @@ import { useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 import { ClipLoader } from 'react-spinners';
 import { useAppDataContext } from './context/AppDataContext';
+import { StatusBar, Style } from '@capacitor/status-bar';
+import { Capacitor } from '@capacitor/core';
 
 export default function App() {
     const { appData, isLoading, error } = useAppDataContext();
 
     const styleSetProperty = document.documentElement.style;
+
+    useEffect(() => {
+        if (Capacitor.isNativePlatform()) {
+            StatusBar.hide();
+        }
+    }, []);
 
     // import site colors from settings
     useEffect(() => {
