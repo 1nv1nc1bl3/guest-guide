@@ -4,6 +4,7 @@ export default function PlaceCard({ place, placeType }) {
     const cardImage = `url('${place?.acf?.place_image}')`;
     const layout = placeType?.acf?.card_layout || 'business';
     // console.log(placeType);
+    console.log(place?.title?.rendered);
 
     const isBeach = layout === 'beach';
     const isBusiness = layout === 'business';
@@ -51,7 +52,9 @@ export default function PlaceCard({ place, placeType }) {
                 } w-full p-2`}
             >
                 {place?.title?.rendered && (
-                    <h3 className='card-title text-xl font-bold text-[--color-additional]'>
+                    <h3
+                        className={`card-title text-lg font-bold ${isBeach ? 'text-[--color-headings]' : 'text-[--color-additional]'} max-w-[75%]`}
+                    >
                         {place?.title?.rendered}
                     </h3>
                 )}
@@ -61,11 +64,7 @@ export default function PlaceCard({ place, placeType }) {
                 )}
 
                 {place?.acf?.place_description && (
-                    <p
-                        className={`card-description max-w-[90%] ${
-                            isBeach ? 'mt-4' : ''
-                        }`}
-                    >
+                    <p className={`card-description ${isBeach ? 'mt-4' : ''}`}>
                         {place?.acf?.place_description}
                     </p>
                 )}
@@ -84,14 +83,16 @@ export default function PlaceCard({ place, placeType }) {
                             <a
                                 key={action.icon}
                                 className={`${
-                                    isBeach ? 'bg-slate-100' : 'bg-gray-200'
+                                    isBeach
+                                        ? 'bg-[--color-dark-bg]'
+                                        : 'bg-gray-200'
                                 } rounded-full p-2`}
                                 href={action.href}
                                 target='_blank'
                                 rel='noopener noreferrer'
                             >
                                 <img
-                                    className='w-6'
+                                    className={`w-6 ${isBeach ? 'invert' : ''}`}
                                     src={action.icon}
                                     alt='place action'
                                 />
