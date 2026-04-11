@@ -28,7 +28,7 @@ export default function LoginPage() {
         setIsSubmitting(true);
         try {
             const res = await fetch(
-                'https://www.mystayguide.app/wp-json/jwt-auth/v1/token',
+                'https://api.mystayguide.app/wp-json/jwt-auth/v1/token',
                 {
                     method: 'POST',
                     headers: {
@@ -41,6 +41,7 @@ export default function LoginPage() {
                 setLoginError(true);
                 return;
             }
+            console.log(res);
             const data = await res.json();
             if (!data.token) {
                 setLoginError(true);
