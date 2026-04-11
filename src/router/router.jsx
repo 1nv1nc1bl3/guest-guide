@@ -6,6 +6,7 @@ import PageScreen from '../pages/PageScreen';
 import Section from '../pages/Section';
 import Page404 from '../pages/Page404';
 import LoginPage from '../pages/LoginPage';
+import PrivateRoute from '../components/layout/PrivateRoute';
 
 export const router = createBrowserRouter(
     [
@@ -14,31 +15,36 @@ export const router = createBrowserRouter(
             element: <App />,
             children: [
                 {
-                    element: <Layout />,
+                    path: '/login',
+                    element: <LoginPage />,
+                },
+                {
+                    element: <PrivateRoute />,
                     children: [
                         {
-                            path: '/login',
-                            element: <LoginPage />,
-                        },
-                        {
-                            index: true,
-                            element: <Dashboard />,
-                        },
-                        {
-                            path: 'page/:slug',
-                            element: <PageScreen />,
-                        },
-                        {
-                            path: 'places/:id',
-                            element: <Section />,
-                        },
-                        {
-                            path: '/404',
-                            element: <Page404 />,
-                        },
-                        {
-                            path: '*',
-                            element: <Page404 />,
+                            element: <Layout />,
+                            children: [
+                                {
+                                    index: true,
+                                    element: <Dashboard />,
+                                },
+                                {
+                                    path: 'page/:slug',
+                                    element: <PageScreen />,
+                                },
+                                {
+                                    path: 'places/:id',
+                                    element: <Section />,
+                                },
+                                {
+                                    path: '404',
+                                    element: <Page404 />,
+                                },
+                                {
+                                    path: '*',
+                                    element: <Page404 />,
+                                },
+                            ],
                         },
                     ],
                 },

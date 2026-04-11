@@ -7,6 +7,15 @@
         "cleartext": true
     },
     "android": {
-        "backgroundColor": "#000000"
+        "backgroundColor": "#f3f4f6"
+    },
+    "plugins": {
+        "SplashScreen": {
+            "launchShowDuration": 1800,
+            "launchAutoHide": true,
+            "backgroundColor": "#f3f4f6",
+            "androidScaleType": "CENTER",
+            "showSpinner": false
+        }
     }
 }

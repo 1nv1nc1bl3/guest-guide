@@ -1,8 +1,8 @@
 import { useParams } from 'react-router-dom';
 import { usePlaces } from '../hooks/usePlaces';
-import PlaceCard from '../components/places/PlaceCard';
 import { getPlaceTypeName } from '../utils/getPlaceTypeName';
 import { useAppDataContext } from '../context/AppDataContext';
+import PlaceCard from '../components/places/PlaceCard';
 import Loader from '../components/ui/Loader';
 
 export default function Section() {
