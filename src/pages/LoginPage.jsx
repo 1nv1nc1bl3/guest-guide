@@ -39,9 +39,11 @@ export default function LoginPage() {
             );
             if (!res.ok) {
                 setLoginError(true);
+                setUsername('');
+                setPassword('');
                 return;
             }
-            console.log(res);
+            // console.log(res);
             const data = await res.json();
             if (!data.token) {
                 setLoginError(true);
@@ -53,15 +55,14 @@ export default function LoginPage() {
             navigate('/');
         } catch {
             setLoginError(true);
+            setUsername('');
+            setPassword('');
         } finally {
             setIsSubmitting(false);
         }
     };
 
     if (isSubmitting) return <Loader />;
-
-    if (loginError)
-        return <p className='text-center text-red-500'>Something went wrong</p>;
 
     return (
         <section className='full-app-page tracking-wide leading-relaxed'>
@@ -139,6 +140,12 @@ export default function LoginPage() {
                                 </div>
 
                                 {/* FORGOT PASSWORD & REMEMBER ME */}
+
+                                {loginError && (
+                                    <p className='text-center text-red-500'>
+                                        Something went wrong
+                                    </p>
+                                )}
 
                                 <div className='!mt-12'>
                                     <button

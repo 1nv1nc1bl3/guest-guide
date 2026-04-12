@@ -11,9 +11,9 @@ export default function Layout() {
 
     return (
         <section className='full-app-page tracking-wide leading-relaxed'>
-            <div className='app-container mx-auto min-h-dvh min-w-full pt-[1dvh] md:pt-[3dvh] lg:pt-[5dvh] bg-gradient-to-b from-[--color-primary] to-[--color-secondary] pt-[env(safe-area-inset-top)]'>
+            <div className='app-container mx-auto min-h-dvh min-w-full bg-gradient-to-b from-[--color-primary] to-[--color-secondary] pt-[env(safe-area-inset-top)]'>
                 {!isHome && <Header />}
-                <main className='flex flex-col items-center min-h-dvh px-6 pt-2 pb-10'>
+                <main className='flex flex-col items-center min-h-dvh px-6 pt-10 pb-10'>
                     <div className='w-full max-w-6xl'>
                         <Outlet />
                     </div>

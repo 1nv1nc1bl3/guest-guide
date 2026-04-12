@@ -4,7 +4,7 @@ export default function PlaceCard({ place, placeType }) {
     const cardImage = `url('${place?.acf?.place_image}')`;
     const layout = placeType?.acf?.card_layout || 'business';
     // console.log(placeType);
-    console.log(place?.title?.rendered);
+    // console.log(place?.title?.rendered);
 
     const isBeach = layout === 'beach';
     const isBusiness = layout === 'business';
@@ -53,7 +53,11 @@ export default function PlaceCard({ place, placeType }) {
             >
                 {place?.title?.rendered && (
                     <h3
-                        className={`card-title text-lg font-bold ${isBeach ? 'text-[--color-headings]' : 'text-[--color-additional]'} max-w-[75%]`}
+                        className={`card-title text-lg font-bold ${
+                            isBeach
+                                ? 'text-[--color-headings]'
+                                : 'text-[--color-additional]'
+                        } max-w-[75%]`}
                     >
                         {place?.title?.rendered}
                     </h3>

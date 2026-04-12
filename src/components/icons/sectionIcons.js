@@ -14,6 +14,7 @@ import leave from '../../assets/icons/leave.svg';
 import contact from '../../assets/icons/contact.svg';
 import email from '../../assets/icons/email.svg';
 import website from '../../assets/icons/website.svg';
+import logout from '../../assets/icons/logout.svg';
 
 export const sectionIcons = {
     'Check In/Out': checkin,
@@ -30,6 +31,7 @@ export const sectionIcons = {
     'Key Phrases & Words': phrases,
     'Before you Leave': leave,
     'Contact': contact,
+    'Logout': logout,
 };
 
 export const appIcons = {
@@ -49,4 +51,5 @@ export const appIcons = {
     contact,
     email,
     website,
+    logout,
 };

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAppDataContext } from '../../context/AppDataContext';
+import { appIcons } from '../icons/sectionIcons';
 import NavItem from './NavItem';
 import BackIcon from '../ui/BackIcon';
 import MenuIcon from '../ui/MenuIcon';
@@ -13,6 +14,11 @@ export default function Header() {
 
     const { appData } = useAppDataContext();
     const navigation = appData?.navigation || [];
+
+    const handleLogout = () => {
+        localStorage.removeItem('token');
+        navigate('/login');
+    };
 
     return (
         <>
@@ -46,6 +52,19 @@ export default function Header() {
                                 setIsOpen={setIsOpen}
                             />
                         ))}
+                        <button
+                            className='logout-button mt-10 flex justify-center items-center gap-4'
+                            onClick={handleLogout}
+                        >
+                            <img
+                                src={appIcons?.logout}
+                                alt='logout button'
+                                className='h-8 rotate-180'
+                            />{' '}
+                            <span className='text-[--color-dark-bg]'>
+                                logout
+                            </span>
+                        </button>
                     </div>
                     <button
                         className='close-icon absolute top-[2vh] right-[2vw] text-white'
