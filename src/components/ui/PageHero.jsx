@@ -7,7 +7,7 @@ export default function PageHero({ image, alt = '', children }) {
                 <img
                     src={image}
                     alt={alt}
-                    className='w-full h-[150px] object-cover rounded-lg'
+                    className='w-full h-[150px] object-cover'
                 />
             )}
 

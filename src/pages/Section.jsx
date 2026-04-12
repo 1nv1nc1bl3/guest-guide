@@ -4,6 +4,7 @@ import { getPlaceTypeName } from '../utils/getPlaceTypeName';
 import { useAppDataContext } from '../context/AppDataContext';
 import PlaceCard from '../components/places/PlaceCard';
 import Loader from '../components/ui/Loader';
+import PageTransition from '../components/ui/PageTransition';
 
 export default function Section() {
     const { id } = useParams();
@@ -18,7 +19,7 @@ export default function Section() {
 
     const placeTitle = getPlaceTypeName(placeTypes, id);
 
-    if (loading) return <Loader />;
+    if (loading) return '';
 
     if (error) {
         return <p className='text-center text-red-500'>Something went wrong</p>;
@@ -27,18 +28,20 @@ export default function Section() {
     if (places.length === 0) return <p>No places found!</p>;
 
     return (
-        <div className='flex flex-col items-center gap-10 w-full'>
-            <h1 className='text-3xl uppercase text-[--color-headings]'>
-                {placeTitle}
-            </h1>
+        <PageTransition>
+            <div className='flex flex-col items-center gap-10 w-full'>
+                <h1 className='text-3xl uppercase text-[--color-headings]'>
+                    {placeTitle}
+                </h1>
 
-            {places.map((place) => (
-                <PlaceCard
-                    key={place?.id}
-                    place={place}
-                    placeType={placeType}
-                />
-            ))}
-        </div>
+                {places.map((place) => (
+                    <PlaceCard
+                        key={place?.id}
+                        place={place}
+                        placeType={placeType}
+                    />
+                ))}
+            </div>
+        </PageTransition>
     );
 }

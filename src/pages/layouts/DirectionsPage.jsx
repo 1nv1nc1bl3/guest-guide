@@ -1,20 +1,19 @@
 import { appIcons } from '../../components/icons/sectionIcons';
+import PageHero from '../../components/ui/PageHero';
 
 export default function DirectionsPage({ data }) {
     // console.log(data);
 
     return (
         <div className='main-section w-full flex flex-col gap-4 md:gap-6 lg:gap-8 text-[--color-texts]'>
-            {data?.hero_image && (
-                <div className='hero-container'>
-                    <img
-                        src={data?.hero_image}
-                        alt='Contact Page Banner'
-                        className='h-[150px] w-full object-cover'
-                    />
-                </div>
-            )}
-            <div className='dark-box flex flex-col justify-center items-center gap-8 bg-[--color-dark-bg] px-4 py-10 mx-auto'>
+            <div className='hero-container'>
+                <PageHero
+                    image={data?.hero_image}
+                    alt='Directions Page Banner'
+                />
+            </div>
+
+            <div className='dark-box flex flex-col justify-center items-center gap-8 bg-[--color-dark-bg] px-4 py-10 mx-auto w-full'>
                 <div className='border bg-[--color-secondary] rounded-full'>
                     <img
                         src={appIcons.directions}

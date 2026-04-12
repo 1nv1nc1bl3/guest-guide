@@ -15,6 +15,7 @@ import contact from '../../assets/icons/contact.svg';
 import email from '../../assets/icons/email.svg';
 import website from '../../assets/icons/website.svg';
 import logout from '../../assets/icons/logout.svg';
+import breakfastCoffee from '../../assets/icons/breakfast-coffee.svg';
 
 export const sectionIcons = {
     'Check In/Out': checkin,
@@ -24,6 +25,7 @@ export const sectionIcons = {
     'Beaches': beach,
     'Places to Eat': restaurant,
     'Places to Drink': bar,
+    'Coffee/Breakfast': breakfastCoffee,
     'House Rules': rules,
     'Emergency': emergency,
     'Local Services': directory,
@@ -42,6 +44,7 @@ export const appIcons = {
     beach,
     restaurant,
     bar,
+    breakfastCoffee,
     rules,
     emergency,
     directory,

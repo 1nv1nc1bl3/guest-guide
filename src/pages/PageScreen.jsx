@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import Loader from '../components/ui/Loader';
+import PageTransition from '../components/ui/PageTransition';
 import WifiPage from './layouts/WifiPage';
 import RulesPage from './layouts/RulesPage';
 import CheckinPage from './layouts/CheckinPage';
@@ -61,26 +62,30 @@ export default function PageScreen() {
         fetchPage();
     }, [slug]);
 
-    if (page === null) return <Loader />;
+    if (page === null) return '';
 
     if (page === false) return <Navigate to='/404' replace />;
 
     if (!Component) return <p>Unknown layout</p>;
 
     return (
-        <div
-            className={`flex flex-col items-center ${layout !== 'emergency' && 'gap-10'} w-full`}
-        >
-            <h1 className='page-title text-2xl text-center uppercase text-[--color-headings]'>
-                {layout !== 'emergency' && (
-                    <span
-                        dangerouslySetInnerHTML={{
-                            __html: page?.title?.rendered,
-                        }}
-                    />
-                )}
-            </h1>
-            {Component && <Component page={page} data={dataMap[layout]} />}
-        </div>
+        <PageTransition>
+            <div
+                className={`flex flex-col items-center ${
+                    layout !== 'emergency' && 'gap-10'
+                } w-full`}
+            >
+                <h1 className='page-title text-2xl text-center uppercase text-[--color-headings]'>
+                    {layout !== 'emergency' && (
+                        <span
+                            dangerouslySetInnerHTML={{
+                                __html: page?.title?.rendered,
+                            }}
+                        />
+                    )}
+                </h1>
+                {Component && <Component page={page} data={dataMap[layout]} />}
+            </div>
+        </PageTransition>
     );
 }

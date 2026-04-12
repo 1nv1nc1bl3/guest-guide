@@ -7,7 +7,12 @@ export default function ArticleContentPage({ data }) {
 
     return (
         <div className='flex flex-col gap-8 w-full'>
-            <PageHero image={data?.hero_image} alt='Things to Know' />
+            <div className='hero-container'>
+                <PageHero
+                    image={data?.hero_image}
+                    alt='Things-to-Know Page Banner'
+                />
+            </div>
             <div className='to-know-subjects flex flex-col gap-8'>
                 {subjects.map((sub, index) => (
                     <div key={index} className='flex flex-col gap-1'>

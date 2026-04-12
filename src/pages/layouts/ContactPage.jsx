@@ -8,8 +8,12 @@ export default function ContactPage({ data }) {
 
     return (
         <div className='contact-page-container w-full flex flex-col gap-8'>
-            <PageHero image={data?.contact_banner} alt='Contact Banner' />
-
+            <div className='hero-container'>
+                <PageHero
+                    image={data?.contact_banner}
+                    alt='Contact Page Banner'
+                />
+            </div>
             <div className='items-container flex flex-col gap-8'>
                 {contact?.global_hotel_address && (
                     <div className='flex flex-col justify-center items-center gap-4'>
