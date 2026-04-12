@@ -10,7 +10,7 @@ export default function LoginPage() {
     const [loginError, setLoginError] = useState(false);
 
     const { appData } = useAppDataContext();
-    console.log(appData);
+    // console.log(appData);
     const navigate = useNavigate();
 
     useEffect(() => {
