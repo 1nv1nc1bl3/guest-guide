@@ -18,7 +18,7 @@ export default function Dashboard() {
     }
 
     return (
-        <PageTransition>
+        <PageTransition elementAnimation='flip'>
             <div className='dashboard flex flex-col justify-center items-center gap-2 md:gap-10 lg:gap-12'>
                 <img
                     className='w-20 h-20'

@@ -28,7 +28,7 @@ export default function Section() {
     if (places.length === 0) return <p>No places found!</p>;
 
     return (
-        <PageTransition>
+        <PageTransition elementAnimation='flip'>
             <div className='flex flex-col items-center gap-10 w-full'>
                 <h1 className='text-3xl uppercase text-[--color-headings]'>
                     {placeTitle}

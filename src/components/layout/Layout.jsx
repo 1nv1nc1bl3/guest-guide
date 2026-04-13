@@ -17,10 +17,13 @@ export default function Layout() {
                 <main className='flex flex-col items-center min-h-dvh px-6 pt-10 pb-10'>
                     <div
                         className='w-full max-w-6xl'
-                        style={{ perspective: '1200px' }}
+                        style={{
+                            perspective: 1200,
+                            transformStyle: 'preserve-3d',
+                        }}
                     >
-                        <AnimatePresence mode='wait'>
-                            <Outlet key={location.pathname} />
+                        <AnimatePresence mode='wait' initial={false}>
+                            <Outlet />
                         </AnimatePresence>
                     </div>
                 </main>

@@ -6,6 +6,8 @@ import NavItem from './NavItem';
 import BackIcon from '../ui/BackIcon';
 import MenuIcon from '../ui/MenuIcon';
 import CloseIcon from '../ui/CloseIcon';
+import PageTransition from '../ui/PageTransition';
+import { AnimatePresence, motion } from 'framer-motion';
 
 export default function Header() {
     const [isOpen, setIsOpen] = useState(false);
@@ -42,38 +44,52 @@ export default function Header() {
             </header>
 
             {/* Menu Popup */}
-            {isOpen && (
-                <div className='popup-overlay fixed top-0 left-0 w-[100%] h-[100%] bg-gradient-to-b from-[--color-primary] to-[--color-secondary] z-50 flex flex-col justify-start items-center'>
-                    <div className='popup-menu text-white flex flex-col gap-4 text-center justify-center h-[100%]'>
-                        {navigation.map((section) => (
-                            <NavItem
-                                key={`${section.section_type}-${section.section_title}`}
-                                section={section}
-                                setIsOpen={setIsOpen}
-                            />
-                        ))}
-                        <button
-                            className='logout-button mt-10 flex justify-center items-center gap-4'
-                            onClick={handleLogout}
-                        >
-                            <img
-                                src={appIcons?.logout}
-                                alt='logout button'
-                                className='h-8 rotate-180'
-                            />{' '}
-                            <span className='text-[--color-dark-bg]'>
-                                logout
-                            </span>
-                        </button>
-                    </div>
-                    <button
-                        className='close-icon absolute top-[2vh] right-[2vw] text-white'
-                        onClick={() => setIsOpen(false)}
+            <AnimatePresence>
+                {isOpen && (
+                    <motion.div
+                        className='popup-overlay fixed top-0 left-0 w-full h-full bg-gradient-to-b from-[--color-primary] to-[--color-secondary] z-50'
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.2, ease: 'easeOut' }}
                     >
-                        <CloseIcon />
-                    </button>
-                </div>
-            )}
+                        <motion.div
+                            className='popup-menu text-white flex flex-col gap-4 text-center justify-center h-full items-center'
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: 10 }}
+                            transition={{ duration: 0.25 }}
+                        >
+                            {navigation.map((section) => (
+                                <NavItem
+                                    key={`${section.section_type}-${section.section_title}`}
+                                    section={section}
+                                    setIsOpen={setIsOpen}
+                                />
+                            ))}
+                            <button
+                                className='logout-button mt-10 flex justify-center items-center gap-4'
+                                onClick={handleLogout}
+                            >
+                                <img
+                                    src={appIcons?.logout}
+                                    alt='logout button'
+                                    className='h-8 rotate-180'
+                                />{' '}
+                                <span className='text-[--color-dark-bg]'>
+                                    logout
+                                </span>
+                            </button>
+                        </motion.div>
+                        <button
+                            className='close-icon absolute top-[2vh] right-[2vw] text-white'
+                            onClick={() => setIsOpen(false)}
+                        >
+                            <CloseIcon />
+                        </button>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </>
     );
 }

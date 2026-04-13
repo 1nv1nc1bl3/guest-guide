@@ -69,7 +69,7 @@ export default function PageScreen() {
     if (!Component) return <p>Unknown layout</p>;
 
     return (
-        <PageTransition>
+        <PageTransition elementAnimation='flip'>
             <div
                 className={`flex flex-col items-center ${
                     layout !== 'emergency' && 'gap-10'
